@@ -1,0 +1,15 @@
+# Pull files from learning repo on Gentoo box
+alias pull-dyl='git pull 192.168.1.10:~/docs/learning HEAD'
+
+# BR machines
+alias conf1='ssh conf@66.54.159.124'
+alias conf2='ssh brightrollconf2@66.54.159.122'
+alias conf3='ssh brightroller@Bright-Rollers-Macbook-Pro-2.local'
+alias conf4='ssh brightroll@66.54.159.121'
+alias lobby='ssh lobby'
+alias www='ssh www.brightroll.com'
+alias kb='ssh kb.brightroll.com'
+alias kb-int='ssh kb-int.brightroll.com'
+
+# Mount website files in local directory
+# sshfs dylansat@dylansather.info:public_html ~/Desktop/personal/website
