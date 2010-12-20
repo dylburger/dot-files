@@ -1,0 +1,11 @@
+# a la Mac OS X
+alias open='thunar'
+
+# Open Chrome through the BR proxy
+alias btrll-chrome='chromium --proxy-server=localhost:3128'
+
+# Ruby aliases
+alias irb='irb --simple-prompt'
+
+# Need to start xbindkeys at startup
+xbindkeys
