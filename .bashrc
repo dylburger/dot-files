@@ -1,6 +1,6 @@
 export PATH=${PATH}:/opt/local/bin
 
-# bash vi keybindings
+# vi shell keybindings
 set -o vi
 
 # System aliases
@@ -21,3 +21,13 @@ alias btrll='ssh -L 3128:192.168.6.20:3128 dylan@jump2.btrll.com'
 # We need to set GPG_TTY for the gnupg vim plugin to work
 GPG_TTY=`tty`
 export GPG_TTY
+
+# If we're on a Mac and have a .bashrc_mac file, read it
+if [ -f ${HOME}/.bashrc_mac && -f /mach_kernel ]; then
+  . ${HOME}/.bashrc_mac
+fi
+
+# If we're on a Linux machine and have a .bashrc_linux file, read it
+if [ -f ${HOME}/.bashrc_linux && -f /proc/version ]; then
+  . ${HOME}/.bashrc_linux
+fi
