@@ -7,6 +7,7 @@ set -o vi
 alias src=". ${HOME}/.bashrc && echo \"Your .bashrc file was re-read\" "
 alias up='git pull && git submodule init && git submodule update && git pull'
 alias c='clear'
+alias ..='cd ..'
 
 # Aliases for commonly-misspelled words
 alias sl='ls'
