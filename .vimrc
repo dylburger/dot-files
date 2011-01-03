@@ -1,4 +1,4 @@
-" Dylan J. Sather's BrightRoll .vimrc file
+" Dylan J. Sather's .vimrc file
 " Created: 2010-08-24
 " Last Edited: 2010-08-24
 
@@ -27,6 +27,11 @@ if $TERM == 'screen'
   set term=xterm
 endif
 
+" Force yourself to work in normal mode... disable arrow keys
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
 
 " For Use with Mutt "
 :autocmd FileType mail :nmap <F8> :w<CR>:!aspell -e -c %<CR>:e<CR>
