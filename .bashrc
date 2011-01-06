@@ -14,6 +14,7 @@ alias sl='ls'
 alias l='ls'
 alias s='ls'
 alias ks='ls'
+alias screem='screen'
 
 # SSH aliases, named by site to which they refer
 alias tcdb='ssh satherdy@tcdb.grinnell.edu'
