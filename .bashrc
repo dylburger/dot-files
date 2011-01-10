@@ -9,6 +9,9 @@ alias up='git pull && git submodule init && git submodule update && git pull'
 alias c='clear'
 alias ..='cd ..'
 
+# Run byobu for screen
+alias screen='byobu'
+
 # Aliases for commonly-misspelled words
 alias sl='ls'
 alias l='ls'
@@ -27,6 +30,7 @@ export GPG_TTY
 
 HISTTIMEFORMAT='%F %T '
 export HISTTIMEFORMAT
+export EDITOR=vi
 
 # If we're on a Mac and have a .bashrc_mac file, read it
 if [ -f ${HOME}/.bashrc_mac ] && [ -f /mach_kernel ]; then
