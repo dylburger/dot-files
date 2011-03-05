@@ -8,6 +8,7 @@ alias src=". ${HOME}/.bashrc && echo \"Your .bashrc file was re-read\" "
 alias up='git pull && git submodule init && git submodule update && git pull'
 alias c='clear'
 alias ..='cd ..'
+alias ls-new='ls -tr | tail -1'
 
 # Run byobu for screen
 alias screen='byobu'
