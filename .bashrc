@@ -1,4 +1,4 @@
-export PATH=${PATH}:/opt/local/bin
+export PATH=${PATH}:/opt/local/bin:/opt/local/sbin
 
 # vi shell keybindings
 set -o vi
