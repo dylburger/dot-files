@@ -14,6 +14,7 @@ alias ls-new='ls -tr | tail -1'
 alias screen='byobu'
 
 # Aliases for commonly-misspelled words
+alias ls='ls -p'
 alias sl='ls'
 alias l='ls'
 alias s='ls'
