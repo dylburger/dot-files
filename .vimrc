@@ -3,7 +3,6 @@
 " Last Edited: 2010-08-24
 
 :syntax on
-:set background=dark
 :set ruler
 :set nomodeline
 :set t_Co=256 
@@ -11,6 +10,7 @@
 :set mouse=a  " Use the mouse in all modes
 :set backspace=2  " Backspace through auto-indentation, etc.
 :set autoindent  " Allows for auto-indentation; great for programming
+:colorscheme fruit
 
 " Line nums
 :set number
