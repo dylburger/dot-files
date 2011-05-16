@@ -7,4 +7,11 @@ alias btrll-chrome='chromium --proxy-server=localhost:3128'
 # Ruby aliases
 alias irb='irb --simple-prompt'
 
-PATH=${PATH}:~/scripts:/usr/games/bin
+PATH=${PATH}:~/scripts:/usr/games/bin:/var/lib/gems/1.8/bin
+
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
+fi
+
+# loads RVM
+#[[ -s /usr/local/rvm/bin/rvm ]] && . /usr/local/rvm/bin/rvm > /dev/null 2>&1

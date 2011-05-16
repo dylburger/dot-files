@@ -16,4 +16,3 @@ alias cloclingit='ssh clockingit'
 # Mount website files in local directory
 # sshfs dylansat@dylansather.info:public_html ~/Desktop/personal/website
 
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
