@@ -9,6 +9,7 @@ alias up='git pull && git submodule init && git submodule update && git pull'
 alias c='clear'
 alias ..='cd ..'
 alias ls-new='ls -tr | tail -1'
+alias take-notes='vi ${HOME}/notes/`date +%Y-%m-%d`'
 
 # Run byobu for screen
 alias screen='byobu'

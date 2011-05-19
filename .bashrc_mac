@@ -11,8 +11,11 @@ alias www='ssh www.brightroll.com'
 alias kb='ssh kb.brightroll.com'
 alias kb-int='ssh kb-int.brightroll.com'
 alias vidloop='ssh vid@vidloop'
-alias cloclingit='ssh clockingit'
+alias clockingit='ssh clockingit'
 
 # Mount website files in local directory
 # sshfs dylansat@dylansather.info:public_html ~/Desktop/personal/website
 
+# Load RVM
+[[ -s ${HOME}/.rvm/bin/rvm ]] && . ${HOME}/.rvm/bin/rvm > /dev/null 2>&1
+#PATH=${PATH}:${HOME}/.rvm/bin:${HOME}/.rvm/gems
