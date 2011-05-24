@@ -1,8 +1,5 @@
 # a la Mac OS X
-alias open='thunar'
-
-# Open Chrome through the BR proxy
-alias btrll-chrome='chromium --proxy-server=localhost:3128'
+alias open='nautilus'
 
 # Ruby aliases
 alias irb='irb --simple-prompt'
