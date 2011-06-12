@@ -10,5 +10,14 @@ if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
 
+alias pfsense='ssh -p 6754 admin@192.168.1.1'
+alias tomato='ssh -p 8564 admin@192.168.1.2'
+
 # loads RVM
 #[[ -s /usr/local/rvm/bin/rvm ]] && . /usr/local/rvm/bin/rvm > /dev/null 2>&1
+
+# If we aren't currently running xbindkeys, start it
+ps -ewww | grep xbindkeys > /dev/null
+if [ $? -ne 0 ]; then
+  xbindkeys &
+fi
