@@ -23,18 +23,17 @@
 " Highlight search
 :set hlsearch
 
-if $TERM == 'screen'
-  set term=xterm
-endif
-
 " Force yourself to work in normal mode... disable arrow keys
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 
-" For Use with Mutt "
-:autocmd FileType mail :nmap <F8> :w<CR>:!aspell -e -c %<CR>:e<CR>
+" html stuff
+:autocmd FileType html set smartindent
+:autocmd FileType html set tabstop=2
+:autocmd FileType html set shiftwidth=2
+:autocmd FileType html set softtabstop=2
 
 " python stuff "
 :autocmd FileType python set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
