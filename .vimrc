@@ -22,6 +22,8 @@
 
 " Highlight search
 :set hlsearch
+" Clear highlight search by pressing Esc
+nnoremap <esc> :noh<return><esc>
 
 if $TERM == 'screen'
   set term=xterm
@@ -32,9 +34,6 @@ inoremap <Left> <NOP>
 inoremap <Right> <NOP>
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
-
-" For Use with Mutt "
-:autocmd FileType mail :nmap <F8> :w<CR>:!aspell -e -c %<CR>:e<CR>
 
 " python stuff "
 :autocmd FileType python set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
@@ -50,8 +49,8 @@ inoremap <Down> <NOP>
 :autocmd FileType ruby set ai
 :autocmd FileType ruby set expandtab
 :autocmd FileType ruby set smarttab
-:autocmd FileType ruby set cinwords=if,elsif,else,unless,for,while,begin,rescue,def,class,module
-:autocmd FileType ruby set smartindent cinwords=if,elsif,else,unless,for,while,begin,rescue,def,class,module
+:autocmd FileType ruby set cinwords=if,elsif,else,unless,for,while,begin,rescue,def,class,module,ensure
+:autocmd FileType ruby set smartindent cinwords=if,elsif,else,unless,for,while,begin,rescue,def,class,module,ensure
 :autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 :autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 :autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
@@ -62,8 +61,6 @@ au BufRead,BufNewFile *.pp   setfiletype puppet
 
 " nagios stuff "
 au BufRead,BufNewFile *.cfg   setfiletype nagios
-
-" ruby stuff "
 
 " For People who catn't tpye "
 :command WQ wq

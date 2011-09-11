@@ -1,4 +1,4 @@
-export PATH=${PATH}:/opt/local/bin:/opt/local/sbin
+export PATH=${PATH}:/opt/local/bin:/opt/local/sbin:/Users/dylan/Desktop/personal/ec2/ec2-api-tools-1.4.4.1/bin
 
 # vi shell keybindings
 set -o vi

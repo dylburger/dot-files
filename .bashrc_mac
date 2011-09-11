@@ -1,8 +1,13 @@
 # Pull files from learning repo on Ubuntu box
 alias pull-dyl='git pull 192.168.1.10:~/docs/learning HEAD'
 
+PATH=${PATH}:~/scripts
+PYTHONPATH=${PYTHONPATH}:~/Desktop/brightRoll/scripts/google
+
 # Mount website files in local directory
 # sshfs dylansat@dylansather.info:public_html ~/Desktop/personal/website
 
 # Load RVM
 [[ -s ${HOME}/.rvm/bin/rvm ]] && . ${HOME}/.rvm/bin/rvm > /dev/null 2>&1
+
+alias wireshark='/Applications/Wireshark.app/Contents/MacOS/Wireshark'
