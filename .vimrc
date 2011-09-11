@@ -25,10 +25,6 @@
 " Clear highlight search by pressing Esc
 nnoremap <esc> :noh<return><esc>
 
-if $TERM == 'screen'
-  set term=xterm
-endif
-
 " Force yourself to work in normal mode... disable arrow keys
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
