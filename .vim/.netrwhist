@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/chris/tree/puppet/manifests/classes'
+let g:netrw_dirhist_2='scp://rordns//rq/current/code/'
+let g:netrw_dirhist_3='/home/chris/tree/rtas/lib/tasks'
+let g:netrw_dirhist_4='/home/chris/Documents/Unix_Notes/ror_class/bookstore/app'
+let g:netrw_dirhist_5='/home/chris/Documents/Unix_Notes/ror_class/bookstore/app/helpers'
+let g:netrw_dirhist_6='/home/chris/Documents/Unix_Notes/ror_class/bookstore/app/controllers'
+let g:netrw_dirhist_7='/home/chris/Documents/Unix_Notes/ror_class/bookstore/app/models'
+let g:netrw_dirhist_8='/home/chris/.ssh'
+let g:netrw_dirhist_9='/home/dylan/docs/chromium-extenions'
