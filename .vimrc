@@ -31,13 +31,16 @@ inoremap <Right> <NOP>
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 
-" python stuff "
+" Load pathogen stuff
+call pathogen#infect()
+
+" python stuff
 :autocmd FileType python set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 :autocmd FileType python set tabstop=4
 :autocmd FileType python set shiftwidth=4
 :autocmd FileType python set softtabstop=4
 
-" ruby stuff "
+" ruby stuff
 :autocmd FileType ruby set nocompatible
 :autocmd FileType ruby set tabstop=2
 :autocmd FileType ruby set shiftwidth=2
@@ -52,17 +55,17 @@ inoremap <Down> <NOP>
 :autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 :autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
-" puppet stuff "
+" puppet stuff
 au BufRead,BufNewFile *.pp   setfiletype puppet
 
-" nagios stuff "
+" nagios stuff
 au BufRead,BufNewFile *.cfg   setfiletype nagios
 
-" For People who catn't tpye "
+" For People who catn't tpye
 :command WQ wq
 :command Wq wq
 
-" Git commands "
+" Git commands
 :command Gd GitDiff
 :command Gs GitStatus
 :command Ga GitAdd

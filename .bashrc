@@ -1,6 +1,14 @@
 export PATH=${PATH}:/opt/local/bin:/opt/local/sbin:/Users/dylan/Desktop/personal/ec2/ec2-api-tools-1.4.4.1/bin:${HOME}/scripts
 export CLASS=${HOME}/personal/class
 
+# TMUX
+if which tmux 2>&1 >/dev/null; then
+  # if no session is started, start a new session
+  if test -z ${TMUX}; then
+    tmux attach -d
+  fi
+fi
+
 # System aliases
 alias src=". ${HOME}/.bashrc && echo \"Your .bashrc file was re-read\" "
 alias up='git pull && git submodule init && git submodule update && git pull'
@@ -8,6 +16,7 @@ alias c='clear'
 alias ..='cd ..'
 alias ls-new='ls -tr | tail -1'
 alias daily-notes='vi ${HOME}/notes/`date +%Y-%m-%d`'
+alias tmux='tmux attach -d'
 
 # Run byobu for screen
 alias screen='byobu'
