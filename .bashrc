@@ -1,6 +1,7 @@
 export PATH=${PATH}:/opt/local/bin:/opt/local/sbin:/Users/dylan/Desktop/personal/ec2/ec2-api-tools-1.4.4.1/bin:${HOME}/scripts
 export CLASS=${HOME}/personal/class
 export PERSONAL_GIT_REPO=${HOME}/personal
+export SCRIPT_REPO=${HOME}/scripts
 
 # TMUX
 if which tmux 2>&1 >/dev/null; then
