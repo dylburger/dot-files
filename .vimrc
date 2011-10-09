@@ -2,6 +2,9 @@
 " Created: 2010-08-24
 " Last Edited: 2010-08-24
 
+" Remove splash screen 
+:set shortmess+=I
+
 :syntax on
 :set ruler
 :set nomodeline
@@ -20,8 +23,8 @@
 :set shiftwidth=2
 :set noexpandtab
 
-" Highlight search
-:set hlsearch
+" Incremental, smart case-insenstive and highlight search
+:set incsearch ignorecase smartcase hlsearch
 " Clear highlight search by pressing Esc
 nnoremap <esc> :noh<return><esc>
 
