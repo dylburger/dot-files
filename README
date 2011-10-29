@@ -1,1 +1,7 @@
 repo for dot files
+
+A number of features will work in any shell; some features are only supported in bash 4 (the use of associative arrays, for instance). Buyer beware!
+
+For a number of these aliases and functions, you'll need to have the appopriate programs installed (e.g. the ssh-agent section will throw errors if you do not have ssh-agent installed)
+
+The setup.sh script creates symlinks in your home directory that point to these dot-files; if you already have dot-files, you may want to combine what you have (or want to keep) and them rm them before proceeding. Otherwise, the script will fail to create the appropriate symlink

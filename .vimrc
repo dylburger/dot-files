@@ -34,6 +34,10 @@ inoremap <Right> <NOP>
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 
+" Move between split windows using Ctrl-J and Ctrl-K
+map <C-J> <C-W>j<C-W>_
+map <C-K> <C-W>k<C-W>_
+
 " Load pathogen stuff
 call pathogen#infect()
 

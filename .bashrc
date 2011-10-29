@@ -1,4 +1,4 @@
-export PATH=${PATH}:/opt/local/bin:/opt/local/sbin:/Users/dylan/Desktop/personal/ec2/ec2-api-tools-1.4.4.1/bin:${HOME}/scripts
+export PATH=${PATH}:/opt/local/bin:/opt/local/sbin:/Users/dylan/Desktop/personal/ec2/ec2-api-tools-1.4.4.1/bin:${HOME}/scripts:/Applications/Octave.app/Contents/Resources/bin:/Applications/Gnuplot.app/Contents/Resources/bin:${HOME}/scala/bin
 export CLASS=${HOME}/personal/class
 export PERSONAL_GIT_REPO=${HOME}/personal
 export SCRIPT_REPO=${HOME}/scripts
@@ -19,6 +19,7 @@ alias ..='cd ..'
 alias ls-new='ls -tr | tail -1'
 alias daily-notes='vi ${HOME}/notes/`date +%Y-%m-%d`'
 alias tmux='tmux attach -d'
+alias irb='irb --prompt simple'
 
 # Run byobu for screen
 alias screen='byobu'

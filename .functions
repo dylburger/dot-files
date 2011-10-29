@@ -1,0 +1,29 @@
+# bash functions
+
+# Checks the status of a git repo and lets you take appropriate action on the files
+git-check () {
+  # Build a hash of { modification status : files }
+  declare -A MOD_FILES
+  for STATUS_LINE in `git status -s`; do
+    FILE=`echo $STATUS_LINE | awk '{print $2}'`
+    STATUS=`echo $STATUS_LINE | awk '{print $1}'`
+    MOD_FILES[$FILE]="$STATUS"
+  done
+  
+  for FILE in $MOD_FILES; do
+    
+    read -p "Add file ${FILE} to this commit? [y/n]: " COMMIT_ANS
+    echo ${COMMIT_ANS} | egrep -q "^[yY]" 
+    if [ $? -eq 0 ]; then
+      git add ${FILE} 
+      let "count += 1"
+    fi
+  done
+
+  if [[ $count -gt 0 ]]; then
+    read -p "git commit msg: " COMMIT_MSG
+    git commit -m "${COMMIT_MSG}"
+  else
+    echo "Nothing to commit!"
+  fi
+}
