@@ -21,6 +21,9 @@ alias daily-notes='vi ${HOME}/notes/`date +%Y-%m-%d`'
 alias tmux='tmux attach -d'
 alias irb='irb --prompt simple'
 
+# I will never run CVS but often fail to spell 'vi' correctly
+alias ci='vi'
+
 # Run byobu for screen
 alias screen='byobu'
 

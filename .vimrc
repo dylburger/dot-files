@@ -41,8 +41,10 @@ map <C-K> <C-W>k<C-W>_
 " Load pathogen stuff
 call pathogen#infect()
 
+filetype indent plugin on
+
 " python stuff
-:autocmd FileType python set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+:autocmd FileType python set cinwords=if,elif,else,for,while,try,except,finally,def,class
 :autocmd FileType python set tabstop=4
 :autocmd FileType python set shiftwidth=4
 :autocmd FileType python set softtabstop=4
@@ -56,7 +58,7 @@ call pathogen#infect()
 :autocmd FileType ruby set expandtab
 :autocmd FileType ruby set smarttab
 :autocmd FileType ruby set cinwords=if,elsif,else,unless,for,while,begin,rescue,def,class,module,ensure
-:autocmd FileType ruby set smartindent cinwords=if,elsif,else,unless,for,while,begin,rescue,def,class,module,ensure
+:autocmd FileType ruby set cinwords=if,elsif,else,unless,for,while,begin,rescue,def,class,module,ensure
 :autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 :autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 :autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
