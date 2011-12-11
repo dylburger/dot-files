@@ -1,4 +1,4 @@
-export PATH=${PATH}:/opt/local/bin:/opt/local/sbin:/Users/dylan/Desktop/personal/ec2/ec2-api-tools-1.4.4.1/bin:${HOME}/scripts:/Applications/Octave.app/Contents/Resources/bin:/Applications/Gnuplot.app/Contents/Resources/bin:${HOME}/scala/bin
+export PATH=${PATH}:/opt/local/bin:/opt/local/sbin:/Users/dylan/Desktop/personal/ec2/ec2-api-tools-1.4.4.1/bin:${HOME}/scripts:/Applications/Octave.app/Contents/Resources/bin:/Applications/Gnuplot.app/Contents/Resources/bin:${HOME}/scala/bin:${HOME}/tree/spark
 export CLASS=${HOME}/personal/class
 export PERSONAL_GIT_REPO=${HOME}/personal
 export SCRIPT_REPO=${HOME}/scripts
@@ -21,8 +21,8 @@ alias daily-notes='vi ${HOME}/notes/`date +%Y-%m-%d`'
 alias tmux='tmux attach -d'
 alias irb='irb --prompt simple'
 
-# I will never run CVS but often fail to spell 'vi' correctly
-alias ci='vi'
+# SSH alia
+alias website='ssh dylansat@dylansather.info'
 
 # Run byobu for screen
 alias screen='byobu'
@@ -34,6 +34,8 @@ alias l='ls'
 alias s='ls'
 alias ks='ls'
 alias screem='screen'
+# I will never run CVS but often fail to spell 'vi' correctly
+alias ci='vi'
 
 # We need to set GPG_TTY for the gnupg vim plugin to work
 GPG_TTY=`tty`
