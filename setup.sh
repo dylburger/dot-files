@@ -11,3 +11,4 @@ ln -s ${REPO}/.bash_profile
 ln -s ${REPO}/.profile 
 ln -s ${REPO}/.vimrc 
 ln -s ${REPO}/.vim 
+ln -s ${REPO}/.tmux.conf
