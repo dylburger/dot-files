@@ -1,4 +1,4 @@
-export PATH=${PATH}:/opt/local/bin:/opt/local/sbin:/Users/dylan/Desktop/personal/ec2/ec2-api-tools-1.4.4.1/bin:${HOME}/scripts:/Applications/Octave.app/Contents/Resources/bin:/Applications/Gnuplot.app/Contents/Resources/bin:${HOME}/scala/bin:${HOME}/tree/spark
+export PATH=${PATH}:/opt/local/bin:/opt/local/sbin
 export CLASS=${HOME}/personal/class
 export PERSONAL_GIT_REPO=${HOME}/personal
 export SCRIPT_REPO=${HOME}/scripts
@@ -20,6 +20,7 @@ alias ls-new='ls -tr | tail -1'
 alias daily-notes='vi ${HOME}/notes/`date +%Y-%m-%d`'
 alias tmux='tmux attach -d'
 alias irb='irb --prompt simple'
+alias ssh-socks='ssh -o "ProxyCommand /usr/bin/nc -x localhost:1080 %h %p"'
 
 # SSH alia
 alias website='ssh dylansat@dylansather.info'
