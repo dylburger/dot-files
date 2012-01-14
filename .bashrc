@@ -21,8 +21,9 @@ alias daily-notes='vi ${HOME}/notes/`date +%Y-%m-%d`'
 alias tmux='tmux attach -d'
 alias irb='irb --prompt simple'
 alias ssh-socks='ssh -o "ProxyCommand /usr/bin/nc -x localhost:1080 %h %p"'
+alias http='python -m SimpleHTTPServer'
 
-# SSH alia
+# SSH aliae
 alias website='ssh dylansat@dylansather.info'
 
 # Run byobu for screen

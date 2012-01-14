@@ -38,6 +38,10 @@ inoremap <Down> <NOP>
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 
+" Insert newlines above/below current line, without entering insert mode
+map <S-CR> O<Esc>
+map <CR> o<Esc>
+
 " Load pathogen stuff
 call pathogen#infect()
 
