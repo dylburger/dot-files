@@ -26,6 +26,11 @@ alias http='python -m SimpleHTTPServer'
 # SSH aliae
 alias website='ssh dylansat@dylansather.info'
 
+# Git aliae (n.b. some of these overwrite system programs, none of which I use, but some of which you may)
+alias gs='git status'
+alias gc='git commit'
+alias gp='git push'
+
 # Run byobu for screen
 alias screen='byobu'
 
