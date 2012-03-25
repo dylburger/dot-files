@@ -3,14 +3,6 @@ export CLASS=${HOME}/personal/class
 export PERSONAL_GIT_REPO=${HOME}/personal
 export SCRIPT_REPO=${HOME}/scripts
 
-# TMUX
-if which tmux 2>&1 >/dev/null; then
-  # if no session is started, start a new session
-  if test -z ${TMUX}; then
-    tmux attach -d
-  fi
-fi
-
 # System aliases
 alias src=". ${HOME}/.bashrc && echo \"Your .bashrc file was re-read\" "
 alias up='git pull && git submodule init && git submodule update && git pull'
@@ -22,12 +14,15 @@ alias tmux='tmux attach -d'
 alias irb='irb --prompt simple'
 alias ssh-socks='ssh -o "ProxyCommand /usr/bin/nc -x localhost:1080 %h %p"'
 alias http='python -m SimpleHTTPServer'
+alias verify='/usr/local/icinga/bin/icinga -v /usr/local/icinga/etc/icinga.cfg'
+alias reload='/etc/init.d/icinga reload'
 
 # SSH aliae
 alias website='ssh dylansat@dylansather.info'
 
 # Git aliae (n.b. some of these overwrite system programs, none of which I use, but some of which you may)
 alias gs='git status'
+alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
 
@@ -41,6 +36,7 @@ alias l='ls'
 alias s='ls'
 alias ks='ls'
 alias screem='screen'
+
 # I will never run CVS but often fail to spell 'vi' correctly
 alias ci='vi'
 
@@ -51,6 +47,18 @@ export GPG_TTY
 HISTTIMEFORMAT='%F %T '
 export HISTTIMEFORMAT
 export EDITOR=vi
+
+# TMUX
+if which tmux 2>&1 >/dev/null; then
+  # if no session is started, start a new session
+  if test -z ${TMUX}; then
+    tmux 
+  fi
+fi
+
+if [ -f /opt/local/etc/profile.d/autojump.sh ]; then  
+  . /opt/local/etc/profile.d/autojump.sh
+fi
 
 # If we're on a Mac and have a .bashrc_mac file, read it
 if [ -f ${HOME}/.bashrc_mac ] && [ -f /mach_kernel ]; then
@@ -67,67 +75,3 @@ if [ -f ${HOME}/.bashrc_br ]; then
   . ${HOME}/.bashrc_br
 fi
 
-# ssh-agent stuff...
-which -s ssh-agent
-if [ $? -eq 0 ]; then
-
-  SSH_ENV="$HOME/.ssh/environment"
-
-  # Start ssh-agent
-  function start_agent {
-    echo "Initializing new SSH agent..."
-    ssh-agent | sed 's/^echo/#echo/' > "$SSH_ENV"
-    echo succeeded
-    chmod 600 "$SSH_ENV"
-    . "$SSH_ENV" > /dev/null
-    ssh-add
-  }
-
-  # test for identities
-  function test_identities {
-    # test whether our standard ids have been added to the agent
-    ssh-add -l | grep "The agent has no identities" > /dev/null
-    if [ $? -eq 0 ]; then
-      ssh-add
-      # $SSH_AUTH_SOCK is broken, start new agent
-      if [ $? -eq 2 ]; then
-	start_agent
-      fi
-    fi
-  }
-
-  # Check for running ssh-agent with proper $SSH_AGENT_PID
-  if [ -n "$SSH_AGENT_PID" ]; then
-    ps -ewww | grep "$SSH_AGENT_PID" | grep ssh-agent > /dev/null
-    if [ $? -eq 0 ]; then
-      test_identities
-    fi
-  # Otherwise, we might be able to load a PID from $SSH_ENV
-  else
-    if [ -f "$SSH_ENV" ]; then
-      . "$SSH_ENV" > /dev/null
-    fi
-    ps -ewww | grep "$SSH_AGENT_PID" | grep ssh-agent > /dev/null
-    if [ $? -eq 0 ]; then
-      test_identities
-    else
-      start_agent
-    fi
-  fi
-fi
-
-# Same with gpg-agent
-which -s gpg-agent
-if [ $? -eq 0 ]; then
-  if test -f $HOME/.gpg-agent-info && kill -0 `cut -d: -f 2 $HOME/.gpg-agent-info` 2>/dev/null; then
-    GPG_AGENT_INFO=`cat $HOME/.gpg-agent-info`
-    SSH_AUTH_SOCK=`cat $HOME/.ssh-auth-sock`
-    SSH_AGENT_PID=`cat $HOME/.ssh-agent-pid`
-    export GPG_AGENT_INFO SSH_AUTH_SOCK SSH_AGENT_PID
-  else
-    eval `gpg-agent --daemon`
-    echo $GPG_AGENT_INFO >$HOME/.gpg-agent-info
-    echo $SSH_AUTH_SOCK > $HOME/.ssh-auth-sock
-    echo $SSH_AGENT_PID > $HOME/.ssh-agent-pid
-  fi
-fi
